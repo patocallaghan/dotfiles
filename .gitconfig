@@ -1,0 +1,25 @@
+[user]
+    name = Pat O'Callaghan
+    email = patocallaghan@gmail.com
+[color]
+    ui = auto
+[color "status"]
+    added = green
+    changed = blue
+    untracked = red
+[color "diff"]
+    meta = yellow
+    old = red
+    new = green
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+[core]
+    editor = gvim
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+[push]
+    default = current
