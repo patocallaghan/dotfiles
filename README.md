@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-.files, including vim and git files
+.files, including vim, chocolatey and git files
