@@ -1,3 +1,4 @@
+cd c:\dev
 set encoding=utf-8
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
@@ -8,43 +9,31 @@ set rtp+=~/vimfiles/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
+Bundle 'L9'
 
 " My bundles here:
 "
 " original repos on GitHub
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'othree/vim-autocomplpop'
+Bundle 'kien/ctrlp.vim'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'scrooloose/nerdtree'
 Bundle 'myusuf3/numbers.vim'
-
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'slim-template/vim-slim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-surround'
+Bundle 'Shutnik/jshint2.vim'
 
 
-
+" Gui
+:set guioptions-=T
 
 " Syntax highlighting
 
@@ -71,7 +60,7 @@ endif
 
 
 " Turn on OmniCompletion
-"set omnifunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
 
 " Set relevant filetypes
 au BufRead,BufNewFile *.scss set filetype=scss
@@ -96,7 +85,7 @@ set shiftround
 set wrap
 " highlight tabs and trailing spaces
 set list
-set listchars=tab:>\ ,eol:¬,trail:-
+set listchars=tab:>\ ,eol:Â¬,trail:-
 highlight NonText guifg=#094D5E
 highlight SpecialKey guifg=#094D5E
 
@@ -115,9 +104,9 @@ set whichwrap=h,l,b,<,>,~,[,]
 
 " Show status line
 set laststatus=2
-" Show what mode you’re currently in
+" Show what mode youÂ’re currently in
 set showmode
-" Show what commands you’re typing
+" Show what commands youÂ’re typing
 set showcmd
 " Allow modelines
 set modeline
@@ -150,32 +139,34 @@ set undodir=%TMP%
 :let mapleader = ","
 
 " Plugins
-"execute pathogen#infect()
-"call pathogen#helptags()
 
 " AutoComplPop
-"let g:acp_behaviorRubyOmniMethodLength = -1
+let g:acp_behaviorRubyOmniMethodLength = -1
 
 " NERDTree
-"autocmd vimenter * NERDTree
-"map <Leader>nt :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree
+map <Leader>nt :NERDTreeToggle<CR>
+nnoremap <F9> :NERDTreeToggle c:\dev
 
 " Numbers
 nnoremap <F3> :NumbersToggle<CR>
 
-" CtrlP
-"let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlP'
-"let g:ctrlp_working_path_mode = 'ra'
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-"" CtrlP ignores
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir':  '\v[\/]\.?(dist|sass-cache|git|hg|svn|node_modules|Library|umbraco|UserControls|ScheduledTasks|Properties|masterpage|App_Browsers|App_Code|DocumentTypes|install|macroScripts|media|umbraco_client)$',
-"  \ 'file': '\v\.(exe|so|dll|master|cs|ascx|sln|csproj|pdb)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"  \ }
+" JSHint
+let jshint2_save = 1
 
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+" CtrlP ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.?(dist|sass-cache|git|hg|svn|node_modules|Library|umbraco|UserControls|ScheduledTasks|Properties|masterpage|App_Browsers|App_Code|DocumentTypes|install|macroScripts|media|umbraco_client)$',
+  \ 'file': '\v\.(exe|so|dll|master|cs|ascx|sln|csproj|pdb)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " Turn off arrow keys
 nnoremap <up> <nop>
