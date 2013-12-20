@@ -31,6 +31,8 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'Shutnik/jshint2.vim'
 
+" Turn on line numbering
+set number
 
 " Gui
 :set guioptions-=T
