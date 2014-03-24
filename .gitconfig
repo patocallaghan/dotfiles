@@ -17,9 +17,22 @@
     br = branch
     co = checkout
     df = diff
+    dt = difftool
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    # View the current working tree status using the short format
+    s = status -s
+    # Switch to a branch, creating it if necessary
+    go = checkout -B
 [core]
-    editor = gvim
+    editor = vim
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
 [push]
     default = current
+[diff]
+	tool = bc3
+[difftool]
+	prompt = false
+[merge]
+	tool = bc3
