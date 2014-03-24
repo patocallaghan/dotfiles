@@ -82,7 +82,7 @@ function server() {
   fi
 }
 
-# Find Port Procecess
+# Find Port Process
 function fp(){
   lsof -i tcp:$1
 }
