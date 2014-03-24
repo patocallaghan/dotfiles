@@ -81,3 +81,13 @@ function server() {
     python -m SimpleHTTPServer $1
   fi
 }
+
+# Find Port Procecess
+function fp(){
+  lsof -i tcp:$1
+}
+
+# Kill Process
+function kp(){
+  lsof -t -i tcp:3000 | xargs kill
+}
