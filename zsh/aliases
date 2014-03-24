@@ -1,0 +1,83 @@
+# Paths
+alias dot="~/dev/github/dotfiles"
+alias dev="~/dev"
+alias io="~/dev/intercom"
+alias emb="~/dev/embercom"
+alias gru="~/dev/grunt"
+alias hack="~/dev/hack"
+
+# Commands
+alias hs=history
+alias h="cd ~/"
+alias reload="source ~/.zshrc"
+alias r!='reload'
+alias r1='reload'
+alias c="clear"
+
+# Vim
+alias v="vim"
+alias ,ev="vim -c \"execute 'normal ,ev'\""
+alias ,el="vim -c \"execute 'normal ,el'\""
+alias ,ea="vim -c \"execute 'normal ,ea'\""
+
+# Git
+alias glol="git log --pretty=oneline --abbrev-commit --graph --decorate"
+alias gll="glol"
+alias grl="git reflog"
+alias gst="echo NOPE!!! use 's' instead"
+alias s="git status --short"
+alias ss="git status"
+alias d="git diff"
+alias dc="git diff --cached"
+alias gcob="git checkout -B"
+alias gcom="git checkout master"
+alias gcop="git checkout -"
+alias gdt="git difftool"
+alias gmt="git mergetool"
+alias go="git checkout -"
+alias gphm="git push heroku master"
+alias grm="git rebase -i master"
+alias gra="git rebase --abort"
+alias grc="git rebase --continue"
+alias ga="git add . && gst"
+alias gcm="git commit -m"
+alias gbc="git branch --merged master | grep -v master | xargs git branch -d"
+alias gpf="git push --force"
+alias gs="git show"
+
+gac() { git add . && git commit -m "$*" }
+gaf() { git add . && git commit -am "fixup! $*" }
+gas() { git add . && git commit -am "squash! $*" }
+
+#tmux
+alias tmux="TERM=screen-256color-bce tmux"
+
+#bundler
+alias b2="bundle --local"
+alias bl="bundle --local"
+alias be="bundle exec"
+
+# Functions
+
+# create horizontal divider
+function hr { printf '=%.0s' $(seq $COLUMNS); }
+
+## make a directory and change into it
+function mk() {
+  if [ ! -n "$1" ]; then
+    echo "Enter a directory name"
+  elif [ -d $1 ]; then
+    echo "\`$1' already exists"
+  else
+    mkdir $1 && cd $1
+  fi
+}
+
+# Start a server
+function server() {
+  if [ ! -n "$1" ]; then
+    python -m SimpleHTTPServer 8080
+  else
+    python -m SimpleHTTPServer $1
+  fi
+}

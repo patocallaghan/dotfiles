@@ -1,0 +1,6 @@
+# User configuration
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH=$HOME/.rbenv/shims:"$PATH"
+
+ctags=/usr/local/bin/ctags
+
