@@ -53,6 +53,7 @@ gas() { git add . && git commit -am "squash! $*" }
 
 #tmux
 alias tmux="TERM=screen-256color-bce tmux"
+alias t=tmux
 
 #bundler
 alias b2="bundle --local"
