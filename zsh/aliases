@@ -44,6 +44,8 @@ alias gcm="git commit -m"
 alias gbc="git branch --merged master | grep -v master | xargs git branch -d"
 alias gpf="git push --force"
 alias gs="git show"
+alias gh="git reset --hard HEAD"
+alias gspruce="git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git checkout -"
 
 gac() { git add . && git commit -m "$*" }
 gaf() { git add . && git commit -am "fixup! $*" }
@@ -56,6 +58,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias b2="bundle --local"
 alias bl="bundle --local"
 alias be="bundle exec"
+alias bi="bundle install"
 
 # Functions
 

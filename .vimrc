@@ -257,10 +257,6 @@ nmap <leader>nt :NERDTreeFind<CR>
 imap <Leader>rr <ESC>:!ruby %<CR>
 nmap <Leader>rr :!ruby %<CR>
 
-" Map commonly mistaken commands
-nmap :w :w!
-nmap :w!q :wq!
-
 " go to the last file you had open
 nmap <leader>l <c-^>
 
