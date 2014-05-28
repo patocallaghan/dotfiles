@@ -61,6 +61,13 @@ alias bl="bundle --local"
 alias be="bundle exec"
 alias bi="bundle install"
 
+#grunt
+alias gsf="grunt server --force"
+alias gt="grunt test:server"
+
+#npm
+alias ni="npm install"
+
 # Functions
 
 # create horizontal divider
