@@ -165,6 +165,7 @@ set dir=~/.vim/tmp
 " set backupdir=~/.vim/tmp
 set undodir=~/.vim/tmp
 set nobackup
+set nowritebackup
 set noswapfile
 
 " Mappings
