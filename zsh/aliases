@@ -3,6 +3,7 @@ alias dot="~/dev/github/dotfiles"
 alias dev="~/dev"
 alias io="~/dev/intercom"
 alias emb="~/dev/embercom"
+alias com="~/dev/intercom_repos/embercom-composer"
 alias gru="~/dev/grunt"
 alias hack="~/dev/hack"
 
@@ -64,6 +65,13 @@ alias bi="bundle install"
 #grunt
 alias gsf="grunt server --force"
 alias gt="grunt test:server"
+
+#ember-cli
+alias es="ember serve"
+alias ets="ember test --server"
+alias eb="ember build"
+alias ebp="ember build --environment=production"
+alias nom="rm -rf tmp dist node_modules bower_components"
 
 #npm
 alias ni="npm install"
