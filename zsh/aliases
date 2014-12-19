@@ -6,6 +6,7 @@ alias emb="~/dev/embercom"
 alias com="~/dev/intercom_repos/embercom-composer"
 alias gru="~/dev/grunt"
 alias hack="~/dev/hack"
+alias ffmpeg="~/Downloads/ffmpeg/ffmpeg"
 
 # Commands
 alias hs=history
@@ -75,6 +76,7 @@ alias nom="rm -rf tmp dist node_modules bower_components"
 
 #npm
 alias ni="npm install"
+alias noni="echo Deleting directories && nom && echo Installing NPM and Bower packages && ni && echo Starting server && es"
 
 # Functions
 
@@ -109,4 +111,11 @@ function fp(){
 # Kill Process
 function kp(){
   lsof -t -i tcp:3000 | xargs kill
+}
+
+# Intercom Process
+function boom(){
+  bundle
+  rake db:migrate
+  RAILS_ENV=test bundle exec rake db:migrate
 }
