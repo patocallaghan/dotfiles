@@ -7,6 +7,7 @@ alias com="~/dev/intercom_repos/embercom-composer"
 alias gru="~/dev/grunt"
 alias hack="~/dev/hack"
 alias ffmpeg="~/Downloads/ffmpeg/ffmpeg"
+alias email="~/dev/email"
 
 # Commands
 alias hs=history
@@ -73,10 +74,15 @@ alias ets="ember test --server"
 alias eb="ember build"
 alias ebp="ember build --environment=production"
 alias nom="rm -rf tmp dist node_modules bower_components"
+alias ecl="rm -rf node_modules/embercom-composer && npm link embercom-composer && es"
 
 #npm
 alias ni="npm install"
 alias noni="echo Deleting directories && nom && echo Installing NPM and Bower packages && ni && echo Starting server && es"
+
+#console
+alias pc="bundle exec muster console production"
+alias rc="rails c"
 
 # Functions
 
