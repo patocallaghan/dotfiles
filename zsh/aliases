@@ -3,10 +3,13 @@ alias dot="~/dev/github/dotfiles"
 alias dev="~/dev"
 alias io="~/dev/intercom"
 alias emb="~/dev/embercom"
+alias rep="~/dev/intercom_repos"
 alias com="~/dev/intercom_repos/embercom-composer"
 alias gru="~/dev/grunt"
 alias hack="~/dev/hack"
 alias ffmpeg="~/Downloads/ffmpeg/ffmpeg"
+alias h2b="~/dev/intercom_repos/h2b"
+alias san="~/dev/intercom_repos/intercom-message-content-sanitization"
 alias email="~/dev/email"
 
 # Commands
@@ -88,6 +91,11 @@ alias rc="rails c"
 
 # create horizontal divider
 function hr { printf '=%.0s' $(seq $COLUMNS); }
+
+# Add and commit a single file
+function commit_file() {
+  git add $1 && git commit -m $2
+}
 
 ## make a directory and change into it
 function mk() {
