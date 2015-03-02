@@ -33,10 +33,10 @@
 [pull]
     ff = only
 [diff]
-	tool = bc3
+  tool = bc3
 [difftool]
-	prompt = false
+  prompt = false
 [merge]
-	tool = bc3
-[branch "master"]
-	pushremote = nopushallowed
+  tool = bc3
+[init]
+  templatedir= ~/dev/scripts/tiny_scripts/git-hooks

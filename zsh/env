@@ -1,6 +1,8 @@
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=$HOME/.rbenv/shims:"$PATH"
+export BROWSERSTACK_USERNAME=patocallaghan3
+export BROWSERSTACK_KEY=X9a5RczE3pwL5H7BmiPy
 
 ctags=/usr/local/bin/ctags
 
