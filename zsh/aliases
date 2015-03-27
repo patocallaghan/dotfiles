@@ -19,6 +19,7 @@ alias reload="source ~/.zshrc"
 alias r!='reload'
 alias r1='reload'
 alias c="clear"
+alias sshc="pbcopy < ~/.ssh/id_rsa.pub"
 
 # Vim
 alias v="vim"

@@ -53,6 +53,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'roman/golden-ratio'
 Bundle 'majutsushi/tagbar'
+Bundle 'rizzatti/dash.vim'
 
 filetype plugin indent on
 syntax on
