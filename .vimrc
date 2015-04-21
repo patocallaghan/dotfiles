@@ -5,55 +5,58 @@ set nocompatible
 syntax on
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
-Bundle 'L9'
+Plugin 'gmarik/vundle'
+Plugin 'L9'
 
 " ==============================================
 " Vundle plugins
 " ==============================================
 " File Explorers
-Bundle 'scrooloose/nerdtree'
-Bundle 'rking/ag.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'duff/vim-bufonly'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'duff/vim-bufonly'
 
 " Syntax & spacing Plugins
-Bundle 'scrooloose/syntastic'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'elzr/vim-json'
-Bundle 'slim-template/vim-slim'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/syntastic'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'elzr/vim-json'
+Plugin 'slim-template/vim-slim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Movement plugins
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Status plugins
-Bundle 'bling/vim-airline'
-Bundle 'mhinz/vim-signify'
+Plugin 'bling/vim-airline'
+Plugin 'mhinz/vim-signify'
 
 " Writing plugins
-Bundle 'mattn/emmet-vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'vim-scripts/Auto-Pairs'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
-" Bundle 'othree/vim-autocomplpop'
+Plugin 'mattn/emmet-vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'vim-scripts/Auto-Pairs'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+" Plugin 'othree/vim-autocomplpop'
 
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'roman/golden-ratio'
-Bundle 'majutsushi/tagbar'
-Bundle 'rizzatti/dash.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'roman/golden-ratio'
+Plugin 'majutsushi/tagbar'
+Plugin 'rizzatti/dash.vim'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax on
