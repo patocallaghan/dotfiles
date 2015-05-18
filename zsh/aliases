@@ -53,6 +53,7 @@ alias gpf="git push --force"
 alias gs="git show"
 alias gh="git reset --hard HEAD"
 alias gspruce="git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git checkout -"
+alias glr="gcom && gl && go && grm"
 
 gac() { git add . && git commit -m "$*" }
 gaf() { git add . && git commit -am "fixup! $*" }
@@ -67,6 +68,7 @@ alias b2="bundle --local"
 alias bl="bundle --local"
 alias be="bundle exec"
 alias bi="bundle install"
+alias ber="bundle exec rspec"
 
 #grunt
 alias gsf="grunt server --force"
@@ -85,7 +87,7 @@ alias ni="npm install"
 alias noni="echo Deleting directories && nom && echo Installing NPM and Bower packages && ni && echo Starting server && es"
 
 #console
-alias pc="bundle exec muster console production"
+alias prodc="bundle exec muster console production"
 alias rc="rails c"
 
 # Functions
