@@ -69,6 +69,7 @@ alias bl="bundle --local"
 alias be="bundle exec"
 alias bi="bundle install"
 alias ber="bundle exec rspec"
+alias beg="bundle exec guard"
 
 #grunt
 alias gsf="grunt server --force"

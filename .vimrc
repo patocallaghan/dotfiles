@@ -31,6 +31,7 @@ Plugin 'elzr/vim-json'
 Plugin 'slim-template/vim-slim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'bronson/vim-trailing-whitespace'
 
 " Movement plugins
 Plugin 'myusuf3/numbers.vim'
@@ -113,7 +114,7 @@ set shiftround
 set wrap
 " highlight tabs and trailing spaces
 set list
-set listchars=tab:>\ ,eol:¬,trail:-
+set listchars=tab:>\ 
 highlight NonText guifg=#094D5E
 highlight SpecialKey guifg=#094D5E
 
