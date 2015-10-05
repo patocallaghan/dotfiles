@@ -1,5 +1,5 @@
 # Paths
-alias dot="~/dev/github/dotfiles"
+alias dotf="~/dev/github/dotfiles"
 alias dev="~/dev"
 alias io="~/dev/intercom"
 alias emb="~/dev/embercom"
@@ -54,6 +54,7 @@ alias gs="git show"
 alias gh="git reset --hard HEAD"
 alias gspruce="git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git checkout -"
 alias glr="gcom && gl && go && grm"
+alias glc="git diff --shortstat `git hash-object -t tree /dev/null`"
 
 gac() { git add . && git commit -m "$*" }
 gaf() { git add . && git commit -am "fixup! $*" }

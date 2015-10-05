@@ -32,6 +32,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ngmy/vim-rubocop'
 
 " Movement plugins
 Plugin 'myusuf3/numbers.vim'
@@ -176,6 +177,10 @@ set noswapfile
 " Mappings
 :let mapleader = ","
 
+" Toggle paste mode
+nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
+imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+
 " Plugins
 
 " Exuberant ctags
@@ -186,6 +191,11 @@ nmap <F8> :TagbarToggle<CR>
 
 " AutoComplPop
 " let g:acp_behaviorRubyOmniMethodLength = -1
+
+" Rubocop
+let g:vimrubocop_config = '~/dev/intercom/.intercom-style-ruby.yml'
+" let g:vimrubocop_keymap = 0
+" nmap <Leader>r :RuboCop<CR>
 
 " NERDTree
 autocmd vimenter * NERDTree
