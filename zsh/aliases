@@ -86,7 +86,8 @@ alias ecl="rm -rf node_modules/embercom-composer && npm link embercom-composer &
 
 #npm
 alias ni="npm install"
-alias noni="echo Deleting directories && nom && echo Installing NPM and Bower packages && ni && echo Starting server && es"
+alias nio="npm install --no-optional"
+alias noni="echo Deleting directories && nom && echo Installing NPM and Bower packages && nio && echo Starting server && es"
 
 #console
 alias prodc="bundle exec muster console production"
