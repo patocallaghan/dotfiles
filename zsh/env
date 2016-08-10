@@ -1,6 +1,7 @@
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH=$HOME/.rbenv/shims:"$PATH"
+export PATH=$HOME/.pilot/shims:$HOME/.pilot/bin:$PATH
+eval $(pilot env)
+export INTERCOM_USER=patocallaghan
 
 ctags=/usr/local/bin/ctags
 

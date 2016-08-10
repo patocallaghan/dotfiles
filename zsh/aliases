@@ -1,16 +1,15 @@
 # Paths
-alias dotf="~/dev/github/dotfiles"
-alias dev="~/dev"
-alias io="~/dev/intercom"
-alias emb="~/dev/embercom"
-alias rep="~/dev/intercom_repos"
-alias com="~/dev/embercom-composer"
-alias gru="~/dev/grunt"
-alias hack="~/dev/hack"
+alias dotf="~/src/me/dotfiles"
+alias src="~/src"
+alias io="~/src/intercom"
+alias emb="~/src/embercom"
+alias rep="~/src/intercom_repos"
+alias com="~/src/embercom-composer"
 alias ffmpeg="~/Downloads/ffmpeg/ffmpeg"
-alias h2b="~/dev/intercom_repos/h2b"
-alias san="~/dev/intercom_repos/intercom-message-content-sanitization"
-alias email="~/dev/email"
+# alias h2b="~/dev/intercom_repos/h2b"
+# alias san="~/dev/intercom_repos/intercom-message-content-sanitization"
+# alias email="~/dev/email"
+alias dotalias="dotf && v zsh/aliases"
 
 # Commands
 alias hs=history
@@ -20,6 +19,7 @@ alias r!='reload'
 alias r1='reload'
 alias c="clear"
 alias sshc="pbcopy < ~/.ssh/id_rsa.pub"
+alias rmorig="rm ./**/*.orig"
 
 # Vim
 alias v="vim"
@@ -55,6 +55,7 @@ alias gh="git reset --hard HEAD"
 alias gspruce="git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git checkout -"
 alias glr="gcom && gl && go && grm"
 alias glc="git diff --shortstat `git hash-object -t tree /dev/null`"
+alias gsf="git diff --color | diff-so-fancy"
 
 gac() { git add . && git commit -m "$*" }
 gaf() { git add . && git commit -am "fixup! $*" }
@@ -72,13 +73,10 @@ alias bi="bundle install"
 alias ber="bundle exec rspec"
 alias beg="bundle exec guard"
 
-#grunt
-alias gsf="grunt server --force"
-alias gt="grunt test:server"
-
 #ember-cli
 alias es="ember serve"
 alias ets="ember test --server"
+alias etsf="ember test --server --filter"
 alias eb="ember build"
 alias ebp="ember build --environment=production"
 alias nom="rm -rf tmp dist node_modules bower_components"
@@ -90,8 +88,12 @@ alias nio="npm install --no-optional"
 alias noni="echo Deleting directories && nom && echo Installing NPM and Bower packages && nio && echo Starting server && es"
 
 #console
-alias prodc="bundle exec muster console production"
-alias rc="rails c"
+alias prodc="muster console production"
+alias rc="pilot exec intercom rails c"
+
+#rspec
+alias pir="pilot exec intercom rspec"
+alias whitelist="cp -r -i spec/sql_whitelister/pending/* spec/sql_whitelister/whitelisted && rm -r spec/sql_whitelister/pending"
 
 # Functions
 
@@ -135,7 +137,15 @@ function kp(){
 
 # Intercom Process
 function boom(){
-  bundle
-  rake db:migrate
-  RAILS_ENV=test bundle exec rake db:migrate
+  pilot exec intercom bundle
+  pilot exec intercom rake db:migrate
+}
+
+#oauth
+function oauth_1() {
+  open "http://intercomrades.intercom.dev/oauth?client_id=$1&state=test"
+}
+
+function oauth_2() {
+  curl -d "client_id=$1&client_secret=$2&code=$3" "http://intercom.dev/auth/eagle/token" | open -f
 }

@@ -1,15 +1,15 @@
-cd ~/dev
+cd ~/src
 set encoding=utf-8
 set nocompatible
 
 syntax on
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'L9'
 
 " ==============================================
@@ -57,6 +57,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'roman/golden-ratio'
 Plugin 'majutsushi/tagbar'
 Plugin 'rizzatti/dash.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -184,7 +185,7 @@ imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 " Plugins
 
 " Exuberant ctags
-set tags=./tags;~/dev
+set tags=./tags;~/src
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>
@@ -193,13 +194,13 @@ nmap <F8> :TagbarToggle<CR>
 " let g:acp_behaviorRubyOmniMethodLength = -1
 
 " Rubocop
-let g:vimrubocop_config = '~/dev/intercom/.intercom-style-ruby.yml'
+let g:vimrubocop_config = '~/src/work/intercom/.intercom-style-ruby.yml'
 " let g:vimrubocop_keymap = 0
 " nmap <Leader>r :RuboCop<CR>
 
 " NERDTree
 autocmd vimenter * NERDTree
-nnoremap <F9> :NERDTreeToggle ~/dev/
+nnoremap <F9> :NERDTreeToggle ~/src/
 
 " Numbers
 nnoremap <F3> :NumbersToggle<CR>
