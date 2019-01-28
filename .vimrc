@@ -194,7 +194,7 @@ nmap <F8> :TagbarToggle<CR>
 " let g:acp_behaviorRubyOmniMethodLength = -1
 
 " Rubocop
-let g:vimrubocop_config = '~/src/work/intercom/.intercom-style-ruby.yml'
+let g:vimrubocop_config = '~/src/intercom/.intercom-style-ruby.yml'
 " let g:vimrubocop_keymap = 0
 " nmap <Leader>r :RuboCop<CR>
 

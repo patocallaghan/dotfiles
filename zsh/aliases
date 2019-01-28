@@ -1,14 +1,12 @@
 # Paths
-alias dotf="~/src/me/dotfiles"
+alias dotf="~/hacking/dotfiles"
+alias hacking="~/hacking"
 alias src="~/src"
 alias io="~/src/intercom"
 alias emb="~/src/embercom"
 alias rep="~/src/intercom_repos"
 alias com="~/src/embercom-composer"
 alias ffmpeg="~/Downloads/ffmpeg/ffmpeg"
-# alias h2b="~/dev/intercom_repos/h2b"
-# alias san="~/dev/intercom_repos/intercom-message-content-sanitization"
-# alias email="~/dev/email"
 alias dotalias="dotf && v zsh/aliases"
 
 # Commands
@@ -41,7 +39,7 @@ alias gcom="git checkout master"
 alias gcop="git checkout -"
 alias gdt="git difftool"
 alias gmt="git mergetool"
-alias go="git checkout -"
+alias gk="git checkout -"
 alias gphm="git push heroku master"
 alias grm="git rebase -i master"
 alias gra="git rebase --abort"
@@ -135,17 +133,11 @@ function kp(){
   lsof -t -i tcp:3000 | xargs kill
 }
 
-# Intercom Process
-function boom(){
-  pilot exec intercom bundle
-  pilot exec intercom rake db:migrate
+function codeshift() {
+  npx jscodeshift -t $1 $2
 }
 
-#oauth
-function oauth_1() {
-  open "http://intercomrades.intercom.dev/oauth?client_id=$1&state=test"
-}
-
-function oauth_2() {
-  curl -d "client_id=$1&client_secret=$2&code=$3" "http://intercom.dev/auth/eagle/token" | open -f
+function role {
+  account=$(jq -r 'keys[]' ~/.aws/accounts | peco)
+  assume-role $account team-dev-infra
 }
