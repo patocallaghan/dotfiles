@@ -3,8 +3,6 @@
 export PATH=$HOME/.pilot/bin:$PATH
 eval $(pilot env)
 
-source $(which assume-role)
-
 eval "$(rbenv init -)"
 export INTERCOM_USER=patocallaghan
 
