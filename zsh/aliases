@@ -1,9 +1,24 @@
+git_checkout_main() {
+  if git show-ref --verify --quiet refs/heads/master; then
+    git checkout master
+  else
+    git checkout main
+  fi
+}
+git_rebase() {
+  if git show-ref --verify --quiet refs/heads/master; then
+    git rebase -i master;
+  else git rebase -i main;
+  fi
+}
 # Paths
 alias dotf="~/hacking/dotfiles"
 alias hacking="~/hacking"
 alias src="~/src"
 alias io="~/src/intercom"
 alias emb="~/src/embercom"
+alias emba="~/src/embercom/apps/embercom"
+alias tma="~/src/embercom/apps/teammate-app"
 alias rep="~/src/intercom_repos"
 alias com="~/src/embercom-composer"
 alias ffmpeg="~/Downloads/ffmpeg/ffmpeg"
@@ -35,13 +50,12 @@ alias ss="git status"
 alias d="git diff"
 alias dc="git diff --cached"
 alias gcob="git checkout -B"
-alias gcom="git checkout master"
 alias gcop="git checkout -"
 alias gdt="git difftool"
 alias gmt="git mergetool"
 alias gk="git checkout -"
 alias gphm="git push heroku master"
-alias grm="git rebase -i master"
+alias grm=git_rebase
 alias gra="git rebase --abort"
 alias grc="git rebase --continue"
 alias ga="git add . && gst"
@@ -50,7 +64,7 @@ alias gbc="git branch --merged master | grep -v master | xargs git branch -d"
 alias gpf="git push --force"
 alias gs="git show"
 alias grh="git reset --hard HEAD"
-alias gspruce="git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git checkout -"
+alias gspruce="gcom && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git checkout -"
 alias glr="gcom && gl && go && grm"
 alias glc="git diff --shortstat `git hash-object -t tree /dev/null`"
 alias gsf="git diff --color | diff-so-fancy"
@@ -79,6 +93,9 @@ alias eb="ember build"
 alias ebp="ember build --environment=production"
 alias nom="rm -rf tmp dist node_modules bower_components"
 alias ecl="rm -rf node_modules/embercom-composer && npm link embercom-composer && es"
+alias sus="script/update && script/server"
+alias pus="pnpm i && script/server"
+alias gus="gl && sus"
 
 #npm
 alias ni="npm install"
@@ -141,3 +158,5 @@ function role {
   account=$(jq -r 'keys[]' ~/.aws/accounts | peco)
   assume-role $account team-dev-infra
 }
+
+alias gcom=git_checkout_main

@@ -1,10 +1,11 @@
 # User configuration
 # pilot
-export PATH=$HOME/.pilot/bin:$PATH
+export PATH="/Applications/Google Chrome.app/Contents/MacOS:$HOME/.pilot/bin:$PATH"
 eval $(pilot env)
 
 eval "$(rbenv init -)"
 export INTERCOM_USER=patocallaghan
 
 ctags=/usr/local/bin/ctags
+echo -e "\n. \"$(brew --prefix asdf)/libexec/asdf.sh\"" >> ~/.bash_profile
 
