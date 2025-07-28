@@ -159,4 +159,4 @@ function role {
   assume-role $account team-dev-infra
 }
 
-alias gcom=git_checkout_main
+# alias gcom=git_checkout_main
